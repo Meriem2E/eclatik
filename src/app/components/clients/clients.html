@@ -1,0 +1,40 @@
+<section class="clients section">
+  <div class="container">
+    <div class="clients__head">
+      <div>
+        <p class="eyebrow">Ils nous font confiance</p>
+        <h2 class="clients__title">Des partenaires qui partagent<br><span class="accent">notre vision.</span></h2>
+        <p class="clients__lead">
+          Ils nous font confiance pour relever leurs défis et construire, ensemble, des marques plus fortes et plus durables.
+        </p>
+      </div>
+      <a href="#contact" class="clients__link">
+        Voir tous nos clients
+        <span class="icon-circle">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <ul class="clients__logos">
+      <li *ngFor="let logo of logos">{{ logo }}</li>
+    </ul>
+
+    <div class="testimonials">
+      <p class="eyebrow">Ils témoignent</p>
+      <div class="testimonials__grid">
+        <article class="testimonial" *ngFor="let t of testimonials">
+          <svg width="26" height="20" viewBox="0 0 26 20" fill="none" class="testimonial__quote-mark"><path d="M0 20V11.4C0 4.6 4 .6 10.8 0v3.6c-3.6.8-5.4 3-5.4 6h5.4V20H0Zm14.6 0V11.4c0-6.8 4-10.8 10.8-11.4v3.6c-3.6.8-5.4 3-5.4 6h5.4V20H14.6Z" fill="var(--jaune)"/></svg>
+          <p class="testimonial__quote">{{ t.quote }}</p>
+          <div class="testimonial__author">
+            <span class="testimonial__avatar">{{ initials(t.name) }}</span>
+            <div>
+              <p class="testimonial__name">{{ t.name }}</p>
+              <p class="testimonial__role">{{ t.role }} · {{ t.company }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

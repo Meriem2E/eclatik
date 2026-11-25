@@ -1,0 +1,34 @@
+<section class="actualites section" id="actualites">
+  <div class="container">
+    <div class="actualites__head">
+      <div class="actualites__intro">
+        <p class="eyebrow">Actualités & insights</p>
+        <h2>Des idées pour aujourd'hui <span class="accent">et demain.</span></h2>
+        <p class="actualites__lead">
+          Tendances, analyses et inspirations pour comprendre un monde qui évolue et anticiper les opportunités.
+        </p>
+        <a href="#newsletter" class="btn btn-outline">
+          Voir toutes nos actualités
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="actualites__grid">
+        <article class="article-card" *ngFor="let a of articles">
+          <div class="article-card__media">
+            <img [src]="a.image" [alt]="a.title">
+          </div>
+          <p class="article-card__cat">{{ a.category }}</p>
+          <h3>{{ a.title }}</h3>
+          <p class="article-card__excerpt">{{ a.excerpt }}</p>
+          <div class="article-card__foot">
+            <span>{{ a.date }}</span>
+            <span class="icon-circle">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<section class="newsletter" id="newsletter">
+  <div class="newsletter__bg">
+    <img src="assets/images/man-walking-corridor.jpg" alt="">
+  </div>
+  <div class="container newsletter__grid">
+    <div class="newsletter__copy">
+      <p class="eyebrow eyebrow--light">Newsletter</p>
+      <h2>Restez connectés <span class="accent">à l'essentiel.</span></h2>
+      <p>Recevez nos insights, tendances et projets directement dans votre boîte mail.</p>
+    </div>
+
+    <form class="newsletter__form" (ngSubmit)="onSubmit()" *ngIf="!submitted(); else thanks">
+      <div class="newsletter__field">
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Votre adresse email"
+          required
+          aria-label="Votre adresse email">
+        <button type="submit" class="btn btn-primary">
+          S'inscrire
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <p class="newsletter__hint">Pas de spam. Que de l'essentiel.</p>
+    </form>
+    <ng-template #thanks>
+      <p class="newsletter__thanks">Merci ! Votre inscription a bien été prise en compte.</p>
+    </ng-template>
+  </div>
+</section>

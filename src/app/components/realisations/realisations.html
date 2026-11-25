@@ -1,0 +1,52 @@
+<section class="realisations section" id="realisations">
+  <div class="container">
+    <div class="realisations__head">
+      <div class="realisations__intro">
+        <p class="eyebrow">Nos réalisations</p>
+        <h2 class="realisations__title">Des projets qui créent <span class="accent">de la valeur.</span></h2>
+        <p class="realisations__lead">
+          Nous transformons les ambitions des marques en expériences mémorables, utiles et performantes.
+        </p>
+        <a href="#contact" class="btn btn-outline">
+          Voir tous nos projets
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="realisations__filters" role="tablist" aria-label="Filtrer les réalisations par secteur">
+        <button
+          type="button"
+          *ngFor="let f of filters"
+          role="tab"
+          [attr.aria-selected]="activeFilter() === f"
+          [ngClass]="{ 'is-active': activeFilter() === f }"
+          (click)="setFilter(f)">
+          {{ f }}
+        </button>
+      </div>
+    </div>
+
+    <div class="realisations__grid">
+      <article class="project-card" *ngFor="let p of visibleProjects()" [ngClass]="{ 'project-card--dark': p.dark }">
+        <div class="project-card__media">
+          <img [src]="p.image" [alt]="p.title">
+        </div>
+        <p class="project-card__cat">{{ p.category }}</p>
+        <h3>{{ p.title }}</h3>
+        <div class="project-card__foot">
+          <p>{{ p.desc }}</p>
+          <span class="icon-circle">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </article>
+    </div>
+
+    <div class="stats">
+      <div class="stat" *ngFor="let s of stats">
+        <p class="stat__value">{{ s.value }}</p>
+        <p class="stat__label">{{ s.label }}</p>
+      </div>
+    </div>
+  </div>
+</section>
